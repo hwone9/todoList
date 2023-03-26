@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import TodoComponent from "./components/TodoComponent";
 
 function App() {
   const [todo, setTodo] = useState("");
@@ -41,9 +42,10 @@ function App() {
           placeholder="write your to do..."
         />
       </form>
-      {todoList.map((item) => {
-        return <li key={item.id}> {item.todo} </li>;
-      })}
+      {todoList.map((item) => (
+        //<li key={item.id}> {item.todo} </li>
+        <TodoComponent key={item.id} id={item.id} todo={item.todo} />
+      ))}
     </div>
   );
 }
