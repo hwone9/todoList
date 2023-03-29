@@ -22,9 +22,9 @@ const TodoTemplateBlock = styled.div`
 function TodoTemplate({ children }) {
   return (
     <TodoTemplateBlock>
-      <TodoHead></TodoHead>
+      <TodoHead count="4"></TodoHead>
       <TodoList></TodoList>
-      <TodoCreate params=""></TodoCreate>
+      <TodoCreate></TodoCreate>
     </TodoTemplateBlock>
   );
 }

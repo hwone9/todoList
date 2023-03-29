@@ -23,12 +23,21 @@ const TodoHeadBlock = styled.div`
     font-weight: bold;
   }
 `;
-function TodoHead({ params }) {
+function TodoHead({ count }) {
+  const dayArr = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'];
+  
+  let today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth()+1;
+  let date = today.getDate();
+  let day = today.getDay();
+  let today_str = `${year}.${String(month).padStart(2,'0')}.${date}`;
+  
   return (
     <TodoHeadBlock>
-      <h1>2023.03.28</h1>
-      <div className="day">화요일</div>
-      <div className="tasks-left">5</div>
+      <h1>{today_str}</h1>
+      <div className="day">{dayArr[Number(day)]}</div>
+      <div className="tasks-left">{count}</div>
     </TodoHeadBlock>
   );
 }
